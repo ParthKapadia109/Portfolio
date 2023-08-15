@@ -1,6 +1,6 @@
 {
+  "name": "portfolio",
   "homepage": "https://ParthKapadia109.github.io/portfolio",
-  "name": "client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
