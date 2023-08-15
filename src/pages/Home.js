@@ -31,9 +31,11 @@ import {
   FaRegFileLines,
 } from "react-icons/fa6";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import resumePdf from "../assets/Parth_resume.pdf";
+import Go_to_top from "../components/Go_to_top.js";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -127,9 +129,16 @@ const Home = () => {
                   <p className="text_info">
                     Get Web Solutions that add value to your business
                   </p>
-                  <Button variant="outline-info" size="xl">
-                    Resume
-                  </Button>
+                  <a
+                    href={resumePdf}
+                    download="Parth Kapadia"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Button variant="outline-info" size="xl">
+                      Resume
+                    </Button>
+                  </a>
                 </div>
               </Col>
               <Col>
@@ -228,7 +237,7 @@ const Home = () => {
       </section>
 
       {/* portfolio */}
-      <section className="sec_main" id="work_section">
+      {/* <section className="sec_main" id="work_section">
         <Container>
           <div className="portfolio_details">
             <p>PORTFOLIO</p>
@@ -236,7 +245,7 @@ const Home = () => {
           </div>
           <div className=""></div>
         </Container>
-      </section>
+      </section> */}
 
       {/* building process */}
       <section className="sec_main">
@@ -438,7 +447,12 @@ const Home = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a
+                    href={resumePdf}
+                    download="Parth Kapadia"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <FaRegFileLines className="icon" />
                     Resume
                   </a>
@@ -449,10 +463,10 @@ const Home = () => {
               <h3>Find me on</h3>
               <ul>
                 <li>
-                  <a href="#">
+                  <NavLink to="https://www.linkedin.com/feed/">
                     <FaLinkedin className="icon" />
                     Linkedin
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
                   <a href="#">
@@ -468,6 +482,8 @@ const Home = () => {
           <img src={hero_shape} alt="shape" className="w-100" />
         </div>
       </footer>
+
+      <Go_to_top />
     </>
   );
 };
