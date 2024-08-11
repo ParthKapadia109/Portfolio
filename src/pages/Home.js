@@ -36,6 +36,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import resumePdf from "../assets/Parth_resume.pdf";
 import Go_to_top from "../components/Go_to_top.js";
+import { ShimmerSimpleGallery } from "react-shimmer-effects";
+import Card from "../components/Card.js";
+import ThemeIcon from "../components/ThemeIcon.js";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -106,6 +109,9 @@ const Home = () => {
                 <Nav.Link className="nav_link" href="#skills_section">
                   Skills
                 </Nav.Link>
+                {/* <Nav.Link className="nav_link" href="#work_section">
+                  Work
+                </Nav.Link> */}
                 <Nav.Link className="nav_link" href="#contact_section">
                   Contact Me
                 </Nav.Link>
@@ -115,6 +121,8 @@ const Home = () => {
               </Nav>
             </Navbar.Collapse>
           </Container>
+
+          {/* <ThemeIcon /> */}
         </Navbar>
       </header>
 
@@ -169,10 +177,10 @@ const Home = () => {
                 <h3>Your partner in digital transformation</h3>
                 <h4>
                   Hi, I'm <span>Parth Kapadia </span>, a web developer based in
-                  Surat, India. I'm passionate about bringing both the technical
-                  and visual aspects of digital products to life. I'm happiest
-                  when I'm creating, learning, exploring and thinking about how
-                  to make things better.
+                  Berlin, Surat. I'm passionate about bringing both the
+                  technical and visual aspects of digital products to life. I'm
+                  happiest when I'm creating, learning, exploring and thinking
+                  about how to make things better.
                 </h4>
               </div>
             </Col>
@@ -241,9 +249,19 @@ const Home = () => {
         <Container>
           <div className="portfolio_details">
             <p>PORTFOLIO</p>
-            <h3>Check out my best work</h3>
+            <h3>Check out my work</h3>
           </div>
-          <div className=""></div>
+          <div className="col-10 mx-auto">
+            <div className="row gy-4">
+              <Card
+                imgsrc=""
+                name="Websites"
+                btnname="Click-more"
+                description="Some quick example text to build on the card title and make up the bulk of the card's content."
+                visit="/service/website"
+              />
+            </div>
+          </div>
         </Container>
       </section> */}
 
@@ -367,7 +385,7 @@ const Home = () => {
                   <Form.Control
                     required
                     type="text"
-                    placeholder="Username"
+                    placeholder="Name"
                     value={formValues.username}
                     name="username"
                     onChange={(e) => handleChange(e)}
